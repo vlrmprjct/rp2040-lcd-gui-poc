@@ -2,6 +2,8 @@
 
 This project serves as a proof of concept for creating a simple GUI interface using the Waveshare RP2040 LCD 1.28 module. The current functionality is minimal, focusing on the GUI.
 
+![Demo GUI @ Waveshare RP2040 LCD 1.28](doc/demo-gui.jpg)
+
 ## Source
 
 - `code/code.ino`: Main entry file
