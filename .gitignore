@@ -1,0 +1,27 @@
+# IDEs
+.idea/
+.vscode/*
+
+# Forced tracked files
+!.vscode/arduino.json
+
+# Arduino
+*.hex
+*.elf
+*.bin
+*.eep
+*.map
+*.lst
+*.sym
+*.lss
+*.o
+*.a
+*.d
+*.s
+*.cpp~
+*.h~
+
+# Dirs
+bck/
+build/
+dist/
