@@ -26,14 +26,15 @@ public:
      * @param backgroundColor The background color of the scale.
      * @param maxScale The maximum speed value for the scale.
      * @param steps The number of steps between each marker.
+     * @param width The width of the scale markers.
      */
-    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int maxScale, int steps = 10) {
+    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int maxScale, int steps = 10, int width = 2) {
         for (int i = 0; i <= maxScale; i += steps) {
             int markerAngle = startAngle + (i * (endAngle - startAngle) / maxScale);
             int xStart, yStart, xEnd, yEnd;
 
             calcLinePositions(markerAngle, outerRadius, innerRadius, xStart, yStart, xEnd, yEnd);
-            drawWideLine(xStart, yStart, xEnd, yEnd, 3, foregroundColor, backgroundColor);
+            drawWideLine(xStart, yStart, xEnd, yEnd, width, foregroundColor, backgroundColor);
         }
     }
 
