@@ -55,7 +55,7 @@ void drawGhostScreen(TFTExtended& ghostSprite) {
     ghostSprite.drawSmoothArc(120, 120, 118, 108, startAngle, endAngle, TFT_GHOST, TFT_BLACK, true);
     ghostSprite.setTextColor(TFT_GHOST, TFT_BLACK);
     ghostSprite.drawString(GHOST, hPos, vPos, LED);
-    ghostSprite.drawScale(startAngle, endAngle, 104, 100, TFT_GHOST, TFT_BLACK, maxScale);
+    ghostSprite.drawScale(startAngle, endAngle, 104, 100, TFT_GHOST, TFT_BLACK, 10, maxScale);
     ghostSprite.drawDotMatrix("00", 60, 50, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
     ghostSprite.drawDotMatrix("000", 105, 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
 }

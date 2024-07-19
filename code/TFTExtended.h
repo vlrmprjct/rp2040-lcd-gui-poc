@@ -27,9 +27,8 @@ public:
      * @param steps The number of steps between each marker.
      * @param maxScale The maximum speed value for the scale.
      */
-    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int maxScale)
-    {
-        for (int i = 0; i <= maxScale; i += 10) {
+    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int steps, int maxScale) {
+        for (int i = 0; i <= maxScale; i += steps) {
             int markerAngle = startAngle + (i * (endAngle - startAngle) / maxScale);
             int xStart, yStart, xEnd, yEnd;
 
