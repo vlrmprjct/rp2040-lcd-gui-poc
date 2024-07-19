@@ -82,6 +82,15 @@ public:
         }
     }
 
+    void dotMatrixDimensions(const char* text, int dotSize, int& width, int& height) {
+        int len = strlen(text);
+        int matrixWidth = 5;
+        int matrixHeight = 7;
+
+        width = len * (matrixWidth * (dotSize + 1) + 2) - 2;
+        height = matrixHeight * (dotSize + 1) - 1;
+    }
+
 private:
 
     /**

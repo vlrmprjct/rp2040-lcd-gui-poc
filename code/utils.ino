@@ -52,12 +52,14 @@ int calcHorizontalOffset(int viewportWidth, int offset, int maxTextWidth) {
  * @param ghostSprite The ghost sprite.
  */
 void drawGhostScreen(TFTExtended& ghostSprite) {
+    int width, height;
     ghostSprite.drawSmoothArc(120, 120, 118, 108, startAngle, endAngle, TFT_GHOST, TFT_BLACK, true);
     ghostSprite.setTextColor(TFT_GHOST, TFT_BLACK);
     ghostSprite.drawString(GHOST, hPos, vPos, LED);
     ghostSprite.drawScale(startAngle, endAngle, 104, 100, TFT_GHOST, TFT_BLACK, maxScale);
     ghostSprite.drawDotMatrix("00", 60, 50, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
-    ghostSprite.drawDotMatrix("000", 105, 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
+    ghostSprite.dotMatrixDimensions("000", 1, width, height);
+    ghostSprite.drawDotMatrix("000", (viewportWidth / 2) - (width / 2), 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
 }
 
 /**
