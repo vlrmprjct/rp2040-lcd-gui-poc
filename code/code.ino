@@ -91,8 +91,8 @@ void loop() {
         sprite.drawString(String(number), horizontalPos, vPos, LED);
 
         // DRAW SCALE
-        sprite.drawScale(startAngle, endAngle, 104, 100, TFT_AMBER, TFT_BLACK, 10, maxScale);
-        sprite.drawScale(angle, angle, 90, 60, TFT_RED, TFT_BLACK, 1, maxScale);
+        sprite.drawScale(startAngle, endAngle, 104, 100, TFT_AMBER, TFT_BLACK, maxScale);
+        sprite.drawScale(angle, angle, 90, 60, TFT_RED, TFT_BLACK, maxScale, 1);
         sprite.drawDotMatrix("KMH", 105, 155, TFT_AMBER, TFT_BLACK, TFT_GHOST, 1);
         sprite.drawDotMatrix("50", 60, 50, TFT_AMBER, TFT_BLACK, TFT_GHOST, 1);
 

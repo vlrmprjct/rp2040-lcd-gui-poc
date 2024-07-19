@@ -24,10 +24,10 @@ public:
      * @param innerRadius The inner radius of the scale.
      * @param foregroundColor The color of the scale markers.
      * @param backgroundColor The background color of the scale.
-     * @param steps The number of steps between each marker.
      * @param maxScale The maximum speed value for the scale.
+     * @param steps The number of steps between each marker.
      */
-    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int steps, int maxScale) {
+    void drawScale(int startAngle, int endAngle, int outerRadius, int innerRadius, uint16_t foregroundColor, uint16_t backgroundColor, int maxScale, int steps = 10) {
         for (int i = 0; i <= maxScale; i += steps) {
             int markerAngle = startAngle + (i * (endAngle - startAngle) / maxScale);
             int xStart, yStart, xEnd, yEnd;
