@@ -9,6 +9,9 @@ TFTExtended sprite = TFTExtended(&tft);
 
 int number = 0;
 
+// PINS
+const int backLight = 25;
+
 // TEST SETTINGS
 const bool testEnabled = true;
 
@@ -36,6 +39,9 @@ bool maxScaleReached = false;
 
 void setup(void) {
 
+    // INIT PINS
+    pinMode(backLight, OUTPUT);
+
     // INIT TFT
     tft.init();
     tft.setRotation(0);
@@ -53,6 +59,9 @@ void setup(void) {
 
     // DRAW GHOST SCREEN
     drawGhostScreen(sprite);
+
+    // SET BACKLIGHT BRIGHTNESS
+    analogWrite(backLight, 50);
 
     // INIT SCALE ANIMATION
     for (int angle = startAngle; angle <= endAngle; angle += 10) {
