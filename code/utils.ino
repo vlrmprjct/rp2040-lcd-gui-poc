@@ -59,7 +59,7 @@ void drawGhostScreen(TFTExtended& ghostSprite) {
     ghostSprite.drawScale(startAngle, endAngle, 104, 100, TFT_GHOST, TFT_BLACK, maxScale);
     ghostSprite.drawDotMatrix("00", 60, 50, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
     ghostSprite.dotMatrixDimensions("000", 1, width, height);
-    ghostSprite.drawDotMatrix("000", (viewportWidth / 2) - (width / 2), 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
+    ghostSprite.drawDotMatrix("000", viewportCenterX - (width / 2), 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
 }
 
 /**

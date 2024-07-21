@@ -13,10 +13,12 @@ int number = 0;
 const bool testEnabled = true;
 
 // VIEWPORT CALCULATIONS
-const int viewportWidth  = tft.getViewportWidth();
-const int viewportHeight = tft.getViewportHeight();
-const int LEDWidth       = tft.textWidth(GHOST, LED);
-const int LEDHeight      = tft.fontHeight(LED);
+const int viewportWidth   = tft.getViewportWidth();
+const int viewportHeight  = tft.getViewportHeight();
+const int viewportCenterX = tft.getViewportWidth() / 2;
+const int viewportCenterY = tft.getViewportHeight() / 2;
+const int LEDWidth        = tft.textWidth(GHOST, LED);
+const int LEDHeight       = tft.fontHeight(LED);
 
 // SCALE SETTINGS
 const int startAngle = 50;
@@ -54,7 +56,7 @@ void setup(void) {
 
     // INIT SCALE ANIMATION
     for (int angle = startAngle; angle <= endAngle; angle += 10) {
-        sprite.drawSmoothArc(viewportWidth / 2, viewportHeight / 2, 116, 110, startAngle, angle + 1, TFT_AMBER, TFT_BLACK, true);
+        sprite.drawSmoothArc(viewportCenterX, viewportCenterY, 116, 110, startAngle, angle + 1, TFT_AMBER, TFT_BLACK, true);
         sprite.pushSprite(0, 0);
         delay(1);
     }
@@ -82,7 +84,7 @@ void loop() {
 
         // DON'T DRAW ARC IF NUMBER IS 0
         if (angle != startAngle) {
-            sprite.drawSmoothArc(viewportWidth / 2, viewportHeight / 2, 116, 110, startAngle, angle, TFT_AMBER, TFT_BLACK, true);
+            sprite.drawSmoothArc(viewportCenterX, viewportCenterY, 116, 110, startAngle, angle, TFT_AMBER, TFT_BLACK, true);
         }
 
         // DRAW 3 x 7 SEGMENT NUMBER
@@ -96,7 +98,7 @@ void loop() {
 
         int width, height;
         sprite.dotMatrixDimensions("KMH", 1, width, height);
-        sprite.drawDotMatrix("KMH", (viewportWidth / 2) - (width / 2), 155, TFT_AMBER, TFT_BLACK, TFT_GHOST, 1);
+        sprite.drawDotMatrix("KMH", viewportCenterX - (width / 2), 155, TFT_AMBER, TFT_BLACK, TFT_GHOST, 1);
 
         sprite.drawDotMatrix("50", 60, 50, TFT_AMBER, TFT_BLACK, TFT_GHOST, 1);
 
