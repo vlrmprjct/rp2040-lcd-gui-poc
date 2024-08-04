@@ -100,13 +100,18 @@ void loop() {
 
         // DRAW SCALE
         sprite.drawScale(startAngle, endAngle, 104, 100, GUI_ACCENT, GUI_BACKGROUND, maxScale);
+
+        // DRAW SCALE NUMBERS
+        sprite.drawStandaloneScaleNumbers(startAngle, endAngle, 90, maxScale, 10, 1);
+
+        // DRAW POINTER
         sprite.drawScale(angle, angle, 90, 60, TFT_RED, GUI_BACKGROUND, maxScale, 1, 3);
 
         int width, height;
         sprite.dotMatrixDimensions("KMH", 1, width, height);
         sprite.drawDotMatrix("KMH", viewportCenterX - (width / 2), 155, GUI_ACCENT, GUI_BACKGROUND, GUI_GHOST, 1);
 
-        sprite.drawDotMatrix("50", 60, 50, GUI_ACCENT, GUI_BACKGROUND, GUI_GHOST, 1);
+        // sprite.drawDotMatrix("50", 60, 50, GUI_ACCENT, GUI_BACKGROUND, GUI_GHOST, 1);
 
         // PUSH SPRITE
         sprite.pushSprite(0, 0);
