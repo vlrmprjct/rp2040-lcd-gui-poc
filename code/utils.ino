@@ -53,13 +53,13 @@ int calcHorizontalOffset(int viewportWidth, int offset, int maxTextWidth) {
  */
 void drawGhostScreen(TFTExtended& ghostSprite) {
     int width, height;
-    ghostSprite.drawSmoothArc(120, 120, 118, 108, startAngle, endAngle, TFT_GHOST, TFT_BLACK, true);
-    ghostSprite.setTextColor(TFT_GHOST, TFT_BLACK);
+    ghostSprite.drawSmoothArc(120, 120, 118, 108, startAngle, endAngle, GUI_GHOST, GUI_BACKGROUND, true);
+    ghostSprite.setTextColor(GUI_GHOST, GUI_BACKGROUND);
     ghostSprite.drawString(GHOST, hPos, vPos, LED);
-    ghostSprite.drawScale(startAngle, endAngle, 104, 100, TFT_GHOST, TFT_BLACK, maxScale);
-    ghostSprite.drawDotMatrix("00", 60, 50, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
+    ghostSprite.drawScale(startAngle, endAngle, 104, 100, GUI_GHOST, GUI_BACKGROUND, maxScale);
+    ghostSprite.drawDotMatrix("00", 60, 50, GUI_GHOST, GUI_BACKGROUND, GUI_GHOST, 1);
     ghostSprite.dotMatrixDimensions("000", 1, width, height);
-    ghostSprite.drawDotMatrix("000", viewportCenterX - (width / 2), 155, TFT_GHOST, TFT_BLACK, TFT_GHOST, 1);
+    ghostSprite.drawDotMatrix("000", viewportCenterX - (width / 2), 155, GUI_GHOST, GUI_BACKGROUND, GUI_GHOST, 1);
 }
 
 /**

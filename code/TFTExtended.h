@@ -4,11 +4,6 @@
 #include "TFT_eSPI.h"
 #include "DotMatrix.h"
 
-// ADDITIONAL COLORS
-#define TFT_GHOST 0x2124 // #212421 / RGB(4, 9, 4)
-#define TFT_VDF   0x0EDB // #08DADB / RGB(1, 54, 27)
-#define TFT_AMBER 0xc2a0 // #C55500 / RGB(24, 21, 0)
-
 class TFTExtended : public TFT_eSprite {
 
 public:
